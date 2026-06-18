@@ -1413,7 +1413,6 @@ export namespace Prisma {
   export type UserMinAggregateOutputType = {
     id: string | null
     email: string | null
-    passwordHash: string | null
     createdAt: Date | null
     name: string | null
     emailVerified: boolean | null
@@ -1424,7 +1423,6 @@ export namespace Prisma {
   export type UserMaxAggregateOutputType = {
     id: string | null
     email: string | null
-    passwordHash: string | null
     createdAt: Date | null
     name: string | null
     emailVerified: boolean | null
@@ -1435,7 +1433,6 @@ export namespace Prisma {
   export type UserCountAggregateOutputType = {
     id: number
     email: number
-    passwordHash: number
     createdAt: number
     name: number
     emailVerified: number
@@ -1448,7 +1445,6 @@ export namespace Prisma {
   export type UserMinAggregateInputType = {
     id?: true
     email?: true
-    passwordHash?: true
     createdAt?: true
     name?: true
     emailVerified?: true
@@ -1459,7 +1455,6 @@ export namespace Prisma {
   export type UserMaxAggregateInputType = {
     id?: true
     email?: true
-    passwordHash?: true
     createdAt?: true
     name?: true
     emailVerified?: true
@@ -1470,7 +1465,6 @@ export namespace Prisma {
   export type UserCountAggregateInputType = {
     id?: true
     email?: true
-    passwordHash?: true
     createdAt?: true
     name?: true
     emailVerified?: true
@@ -1554,7 +1548,6 @@ export namespace Prisma {
   export type UserGroupByOutputType = {
     id: string
     email: string
-    passwordHash: string
     createdAt: Date
     name: string
     emailVerified: boolean
@@ -1582,7 +1575,6 @@ export namespace Prisma {
   export type UserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     email?: boolean
-    passwordHash?: boolean
     createdAt?: boolean
     name?: boolean
     emailVerified?: boolean
@@ -1597,7 +1589,6 @@ export namespace Prisma {
   export type UserSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     email?: boolean
-    passwordHash?: boolean
     createdAt?: boolean
     name?: boolean
     emailVerified?: boolean
@@ -1608,7 +1599,6 @@ export namespace Prisma {
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     email?: boolean
-    passwordHash?: boolean
     createdAt?: boolean
     name?: boolean
     emailVerified?: boolean
@@ -1619,7 +1609,6 @@ export namespace Prisma {
   export type UserSelectScalar = {
     id?: boolean
     email?: boolean
-    passwordHash?: boolean
     createdAt?: boolean
     name?: boolean
     emailVerified?: boolean
@@ -1627,7 +1616,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "passwordHash" | "createdAt" | "name" | "emailVerified" | "image" | "updatedAt", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "createdAt" | "name" | "emailVerified" | "image" | "updatedAt", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     jogatinas?: boolean | User$jogatinasArgs<ExtArgs>
     sessions?: boolean | User$sessionsArgs<ExtArgs>
@@ -1647,7 +1636,6 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       email: string
-      passwordHash: string
       createdAt: Date
       name: string
       emailVerified: boolean
@@ -2081,7 +2069,6 @@ export namespace Prisma {
   interface UserFieldRefs {
     readonly id: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
-    readonly passwordHash: FieldRef<"User", 'String'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly name: FieldRef<"User", 'String'>
     readonly emailVerified: FieldRef<"User", 'Boolean'>
@@ -8002,7 +7989,6 @@ export namespace Prisma {
   export const UserScalarFieldEnum: {
     id: 'id',
     email: 'email',
-    passwordHash: 'passwordHash',
     createdAt: 'createdAt',
     name: 'name',
     emailVerified: 'emailVerified',
@@ -8166,7 +8152,6 @@ export namespace Prisma {
     NOT?: UserWhereInput | UserWhereInput[]
     id?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
-    passwordHash?: StringFilter<"User"> | string
     createdAt?: DateTimeFilter<"User"> | Date | string
     name?: StringFilter<"User"> | string
     emailVerified?: BoolFilter<"User"> | boolean
@@ -8180,7 +8165,6 @@ export namespace Prisma {
   export type UserOrderByWithRelationInput = {
     id?: SortOrder
     email?: SortOrder
-    passwordHash?: SortOrder
     createdAt?: SortOrder
     name?: SortOrder
     emailVerified?: SortOrder
@@ -8197,7 +8181,6 @@ export namespace Prisma {
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
-    passwordHash?: StringFilter<"User"> | string
     createdAt?: DateTimeFilter<"User"> | Date | string
     name?: StringFilter<"User"> | string
     emailVerified?: BoolFilter<"User"> | boolean
@@ -8211,7 +8194,6 @@ export namespace Prisma {
   export type UserOrderByWithAggregationInput = {
     id?: SortOrder
     email?: SortOrder
-    passwordHash?: SortOrder
     createdAt?: SortOrder
     name?: SortOrder
     emailVerified?: SortOrder
@@ -8228,7 +8210,6 @@ export namespace Prisma {
     NOT?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
-    passwordHash?: StringWithAggregatesFilter<"User"> | string
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     name?: StringWithAggregatesFilter<"User"> | string
     emailVerified?: BoolWithAggregatesFilter<"User"> | boolean
@@ -8569,7 +8550,6 @@ export namespace Prisma {
   export type UserCreateInput = {
     id: string
     email: string
-    passwordHash: string
     createdAt?: Date | string
     name: string
     emailVerified?: boolean
@@ -8583,7 +8563,6 @@ export namespace Prisma {
   export type UserUncheckedCreateInput = {
     id: string
     email: string
-    passwordHash: string
     createdAt?: Date | string
     name: string
     emailVerified?: boolean
@@ -8597,7 +8576,6 @@ export namespace Prisma {
   export type UserUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    passwordHash?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     emailVerified?: BoolFieldUpdateOperationsInput | boolean
@@ -8611,7 +8589,6 @@ export namespace Prisma {
   export type UserUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    passwordHash?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     emailVerified?: BoolFieldUpdateOperationsInput | boolean
@@ -8625,7 +8602,6 @@ export namespace Prisma {
   export type UserCreateManyInput = {
     id: string
     email: string
-    passwordHash: string
     createdAt?: Date | string
     name: string
     emailVerified?: boolean
@@ -8636,7 +8612,6 @@ export namespace Prisma {
   export type UserUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    passwordHash?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     emailVerified?: BoolFieldUpdateOperationsInput | boolean
@@ -8647,7 +8622,6 @@ export namespace Prisma {
   export type UserUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    passwordHash?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     emailVerified?: BoolFieldUpdateOperationsInput | boolean
@@ -9096,7 +9070,6 @@ export namespace Prisma {
   export type UserCountOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
-    passwordHash?: SortOrder
     createdAt?: SortOrder
     name?: SortOrder
     emailVerified?: SortOrder
@@ -9107,7 +9080,6 @@ export namespace Prisma {
   export type UserMaxOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
-    passwordHash?: SortOrder
     createdAt?: SortOrder
     name?: SortOrder
     emailVerified?: SortOrder
@@ -9118,7 +9090,6 @@ export namespace Prisma {
   export type UserMinOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
-    passwordHash?: SortOrder
     createdAt?: SortOrder
     name?: SortOrder
     emailVerified?: SortOrder
@@ -9997,7 +9968,6 @@ export namespace Prisma {
   export type UserCreateWithoutJogatinasInput = {
     id: string
     email: string
-    passwordHash: string
     createdAt?: Date | string
     name: string
     emailVerified?: boolean
@@ -10010,7 +9980,6 @@ export namespace Prisma {
   export type UserUncheckedCreateWithoutJogatinasInput = {
     id: string
     email: string
-    passwordHash: string
     createdAt?: Date | string
     name: string
     emailVerified?: boolean
@@ -10056,7 +10025,6 @@ export namespace Prisma {
   export type UserUpdateWithoutJogatinasInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    passwordHash?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     emailVerified?: BoolFieldUpdateOperationsInput | boolean
@@ -10069,7 +10037,6 @@ export namespace Prisma {
   export type UserUncheckedUpdateWithoutJogatinasInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    passwordHash?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     emailVerified?: BoolFieldUpdateOperationsInput | boolean
@@ -10105,7 +10072,6 @@ export namespace Prisma {
   export type UserCreateWithoutSessionsInput = {
     id: string
     email: string
-    passwordHash: string
     createdAt?: Date | string
     name: string
     emailVerified?: boolean
@@ -10118,7 +10084,6 @@ export namespace Prisma {
   export type UserUncheckedCreateWithoutSessionsInput = {
     id: string
     email: string
-    passwordHash: string
     createdAt?: Date | string
     name: string
     emailVerified?: boolean
@@ -10147,7 +10112,6 @@ export namespace Prisma {
   export type UserUpdateWithoutSessionsInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    passwordHash?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     emailVerified?: BoolFieldUpdateOperationsInput | boolean
@@ -10160,7 +10124,6 @@ export namespace Prisma {
   export type UserUncheckedUpdateWithoutSessionsInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    passwordHash?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     emailVerified?: BoolFieldUpdateOperationsInput | boolean
@@ -10173,7 +10136,6 @@ export namespace Prisma {
   export type UserCreateWithoutAccountsInput = {
     id: string
     email: string
-    passwordHash: string
     createdAt?: Date | string
     name: string
     emailVerified?: boolean
@@ -10186,7 +10148,6 @@ export namespace Prisma {
   export type UserUncheckedCreateWithoutAccountsInput = {
     id: string
     email: string
-    passwordHash: string
     createdAt?: Date | string
     name: string
     emailVerified?: boolean
@@ -10215,7 +10176,6 @@ export namespace Prisma {
   export type UserUpdateWithoutAccountsInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    passwordHash?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     emailVerified?: BoolFieldUpdateOperationsInput | boolean
@@ -10228,7 +10188,6 @@ export namespace Prisma {
   export type UserUncheckedUpdateWithoutAccountsInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    passwordHash?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     emailVerified?: BoolFieldUpdateOperationsInput | boolean

@@ -3,6 +3,9 @@ import express from "express";
 import dotenv from "dotenv";
 import { auth } from "./lib/auth.js";
 import { toNodeHandler } from "better-auth/node";
+import planRoutes from "./routes/plan.routes.js"; // importação
+
+app.use("/api/plans", planRoutes); // registro no prefixo /api/plans
 
 dotenv.config();
 
