@@ -9,12 +9,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5500;
 
-// Middleware
-app.use(express.json());
-
 // Rotas de autenticação do Better Auth
 // Isso cria todas as rotas automaticamente!
 app.all("/api/auth/*path", toNodeHandler(auth));
+
+// Middleware
+app.use(express.json());
+
 
 // Health check
 app.get("/health", (req, res) => {

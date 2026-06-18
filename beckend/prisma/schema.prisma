@@ -6,7 +6,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = ""
 }
 
 model User {
@@ -15,8 +14,7 @@ model User {
   passwordHash  String
   createdAt     DateTime   @default(now())
   jogatinas     Jogatina[]
-  name          String
-  avatar        
+  name          String        
   emailVerified Boolean    @default(false)
   image         String?
   updatedAt     DateTime   @updatedAt

@@ -10,6 +10,8 @@ export const auth = betterAuth({
     provider: "postgresql", // ou "mysql", "sqlite", etc.
   }),
 
+baseURL: "http://localhost:5500",
+
   // Configurações de email (opcional)
   emailAndPassword: {
     enabled: true,
