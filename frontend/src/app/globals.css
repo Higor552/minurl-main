@@ -4,6 +4,41 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-tan-50: #f7f2ee;
+  --color-tan-100: #eee6dd;
+  --color-tan-200: #decdba;
+  --color-tan-300: #cdb398;
+  --color-tan-400: #bd9a75;
+  --color-tan-500: #ac8153;
+  --color-tan-600: #8a6742;
+  --color-tan-700: #674d32;
+  --color-tan-800: #453421;
+  --color-tan-900: #221a11;
+  --color-tan-950: #18120c;
+
+  --color-shadow-grey-50: #f4f0f5;
+  --color-shadow-grey-100: #e8e0eb;
+  --color-shadow-grey-200: #d1c1d7;
+  --color-shadow-grey-300: #bba2c3;
+  --color-shadow-grey-400: #a484ae;
+  --color-shadow-grey-500: #8d659a;
+  --color-shadow-grey-600: #71517b;
+  --color-shadow-grey-700: #553c5d;
+  --color-shadow-grey-800: #38283e;
+  --color-shadow-grey-900: #1c141f;
+  --color-shadow-grey-950: #140e16;
+
+  --color-coffee-bean-50: #f6f1ef;
+  --color-coffee-bean-100: #ece3df;
+  --color-coffee-bean-200: #dac7be;
+  --color-coffee-bean-300: #c7ab9e;
+  --color-coffee-bean-400: #b58f7d;
+  --color-coffee-bean-500: #a2735d;
+  --color-coffee-bean-600: #825c4a;
+  --color-coffee-bean-700: #614538;
+  --color-coffee-bean-800: #412e25;
+  --color-coffee-bean-900: #201713;
+  --color-coffee-bean-950: #17100d;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
