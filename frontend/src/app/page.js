@@ -3,9 +3,9 @@ import { Input } from "@/components/ui/input";
 
 export default function Home() {
   return (
-    <div className="font-dudu flex flex-col min-h-screen">
+    <div className=" flex flex-col min-h-screen">
       
-      {/* Seção Principal (Hero) */}
+      
       <section className="w-full py-24 md:py-32 lg:py-48  text-black flex flex-col items-center text-center px-4 border-b border-black/10">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-6 text-black">
           Cada Escolha Importa.
@@ -16,7 +16,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Seção de Busca */}
+      
       <section className="w-full py-20 bg-white flex flex-col items-center px-4">
         <div className="max-w-3xl w-full text-center space-y-8">
           <div>
@@ -38,12 +38,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Seção de Funcionalidades (Conectada com o Banco de Dados) */}
+      
       <section className="w-full py-16 bg-gray-50 flex flex-col items-center px-4 border-t border-gray-200">
-         <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             
-            {/* Referente ao model Game */}
+            
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <h3 className="text-xl font-bold mb-3">1. Seus Jogos</h3>
               <p className="text-gray-600">
@@ -51,7 +50,7 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Referente ao model Jogatina */}
+            
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <h3 className="text-xl font-bold mb-3">2. Suas Decisões</h3>
               <p className="text-gray-600">
@@ -59,15 +58,15 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Referente às consultas gerais da comunidade */}
+            
             <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
               <h3 className="text-xl font-bold mb-3">3. Estatísticas</h3>
               <p className="text-gray-600">
                 Acesse o painel para descobrir se a maioria da comunidade tomou o mesmo caminho que você.
               </p>
             </div>
-
-         </div>
+            
+          </div>
       </section>
 
     </div>
