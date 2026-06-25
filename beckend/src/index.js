@@ -5,7 +5,7 @@ import { auth } from "./lib/auth.js";
 import { toNodeHandler } from "better-auth/node";
 import planRoutes from "./routes/plan.routes.js"; // importação
 
-app.use("/api/plans", planRoutes); // registro no prefixo /api/plans
+
 
 dotenv.config();
 
@@ -19,11 +19,14 @@ app.all("/api/auth/*path", toNodeHandler(auth));
 // Middleware
 app.use(express.json());
 
+app.use("/api/plans", planRoutes); // registro no prefixo /api/plans
 
 // Health check
 app.get("/health", (req, res) => {
   res.json({ status: "OK" });
 });
+
+
 
 // Iniciar servidor
 app.listen(PORT, () => {
