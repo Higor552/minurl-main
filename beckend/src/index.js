@@ -5,6 +5,7 @@ import cors from "cors";
 import { auth } from "./lib/auth.js";
 import { toNodeHandler } from "better-auth/node";
 import planRoutes from "./routes/plan.routes.js"; // importação
+import jogatinaRoutes from "./routes/jogatina.routes.js";
 
 
 
@@ -28,6 +29,7 @@ app.all("/api/auth/*path", toNodeHandler(auth));
 app.use(express.json());
 
 app.use("/api/plans", planRoutes); // registro no prefixo /api/plans
+app.use("/api/jogatinas", jogatinaRoutes); // registro no prefixo /api/jogatinas
 
 // Health check
 app.get("/health", (req, res) => {
