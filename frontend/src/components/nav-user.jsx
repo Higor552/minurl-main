@@ -2,6 +2,8 @@
 "use client";
 
 import { ChevronsUpDown, LogOut } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -16,9 +18,29 @@ import {
     SidebarMenuItem,
     useSidebar,
 } from "@/components/ui/sidebar";
+import { authClient } from "@/lib/auth-client";
 
 export function NavUser({ user }) {
     const { isMobile } = useSidebar();
+    const router = useRouter();
+    const [isLoggingOut, setIsLoggingOut] = useState(false);
+
+    async function handleLogout() {
+        if (isLoggingOut) return;
+        setIsLoggingOut(true);
+
+        const { error } = await authClient.signOut();
+
+        setIsLoggingOut(false);
+
+        if (error) {
+            console.error("Erro ao deslogar:", error);
+            return;
+        }
+
+        router.push("/");
+        router.refresh();
+    }
 
     return (
         <SidebarMenu>
@@ -46,9 +68,9 @@ export function NavUser({ user }) {
                         align="end"
                         sideOffset={4}
                     >
-                        <DropdownMenuItem>
+                        <DropdownMenuItem onClick={handleLogout} disabled={isLoggingOut}>
                             <LogOut />
-                            Sair
+                            {isLoggingOut ? "Saindo..." : "Sair"}
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>

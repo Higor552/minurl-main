@@ -130,6 +130,14 @@ exports.Prisma.UserScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.PlanScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  price: 'price',
+  maxLinks: 'maxLinks',
+  maxClicks: 'maxClicks'
+};
+
 exports.Prisma.GameScalarFieldEnum = {
   id: 'id',
   title: 'title',
@@ -199,6 +207,7 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   User: 'User',
+  Plan: 'Plan',
   Game: 'Game',
   Jogatina: 'Jogatina',
   Session: 'Session',

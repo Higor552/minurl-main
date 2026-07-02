@@ -1,3 +1,7 @@
+"use client"
+
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -14,8 +18,49 @@ import {
     FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { authClient } from "@/lib/auth-client"
 
 export function SignupForm({ className, ...props }) {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+    const [error, setError] = useState("")
+    const [loading, setLoading] = useState(false)
+
+    const router = useRouter()
+
+    async function handleSubmit(event) {
+        event.preventDefault()
+        setError("")
+
+        if (password.length < 8) {
+            setError("A senha deve ter pelo menos 8 caracteres.")
+            return
+        }
+        if (password !== confirmPassword) {
+            setError("As senhas não coincidem.")
+            return
+        }
+
+        setLoading(true)
+
+        const { error } = await authClient.signUp.email({
+            name,
+            email,
+            password,
+        })
+
+        setLoading(false)
+
+        if (error) {
+            setError("Erro ao criar conta. Verifique os dados e tente novamente.")
+            return
+        }
+
+        router.push("/dashboard")
+    }
+
     return (
         <div className={cn("flex flex-col gap-6 font-dudu", className)} {...props}>
             <Card>
@@ -26,11 +71,22 @@ export function SignupForm({ className, ...props }) {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <FieldGroup>
+                            {error && (
+                                <p className="text-sm text-red-500 text-center">{error}</p>
+                            )}
+
                             <Field>
                                 <FieldLabel htmlFor="name">Nome Completo</FieldLabel>
-                                <Input id="name" type="text" placeholder="Max Caulfield" required />
+                                <Input
+                                    id="name"
+                                    type="text"
+                                    placeholder="Max Caulfield"
+                                    required
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                />
                             </Field>
                             <Field>
                                 <FieldLabel htmlFor="email">E-mail</FieldLabel>
@@ -39,19 +95,33 @@ export function SignupForm({ className, ...props }) {
                                     type="email"
                                     placeholder="m@examplo.com"
                                     required
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                 />
                             </Field>
                             <Field>
                                 <Field className="grid grid-cols-2 gap-4">
                                     <Field>
                                         <FieldLabel htmlFor="password">Senha</FieldLabel>
-                                        <Input id="password" type="password" required />
+                                        <Input
+                                            id="password"
+                                            type="password"
+                                            required
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                        />
                                     </Field>
                                     <Field>
                                         <FieldLabel htmlFor="confirm-password">
                                             Confirmar Senha
                                         </FieldLabel>
-                                        <Input id="confirm-password" type="password" required />
+                                        <Input
+                                            id="confirm-password"
+                                            type="password"
+                                            required
+                                            value={confirmPassword}
+                                            onChange={(e) => setConfirmPassword(e.target.value)}
+                                        />
                                     </Field>
                                 </Field>
                                 <FieldDescription>
@@ -59,7 +129,9 @@ export function SignupForm({ className, ...props }) {
                                 </FieldDescription>
                             </Field>
                             <Field>
-                                <Button type="submit" className="w-full">Criar Conta</Button>
+                                <Button type="submit" className="w-full" disabled={loading}>
+                                    {loading ? "Criando conta..." : "Criar Conta"}
+                                </Button>
                                 <FieldDescription className="text-center mt-4">
                                     Já tem uma conta?{" "}
                                     <a href="/login" className="underline font-bold text-primary">

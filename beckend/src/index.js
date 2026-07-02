@@ -1,6 +1,7 @@
 // src/index.js
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { auth } from "./lib/auth.js";
 import { toNodeHandler } from "better-auth/node";
 import planRoutes from "./routes/plan.routes.js"; // importação
@@ -11,6 +12,13 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5500;
+
+app.use(
+  cors({
+    origin: "http://localhost:3000", // endereço do frontend
+    credentials: true, // permite envio de cookies de sessão
+  }),
+);
 
 // Rotas de autenticação do Better Auth
 // Isso cria todas as rotas automaticamente!
